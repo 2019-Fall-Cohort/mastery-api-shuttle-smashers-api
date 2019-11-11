@@ -27,6 +27,26 @@ public class Player {
 		this.team = team;
 	}
 
+	public Long getId() {
+		return id;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	 
+	public String getCountry() {
+		return country;
+	}
+	
+	public Gender getGender() {
+		return gender;
+	}
+	
+	public Team getTeam() {
+		return team;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -72,5 +92,13 @@ public class Player {
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "Player [id=" + id + ", name=" + name + ", country=" + country + ", gender=" + gender + ", team=" + team
+				+ "]";
+	}
+
+	
 
 }

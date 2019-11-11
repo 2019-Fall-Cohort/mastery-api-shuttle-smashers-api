@@ -29,6 +29,14 @@ public class Team {
 	public Long getId() {
 		return id;
 	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public Gender getGender() {
+		return gender;
+	}
 
 	public List<Player> getPlayers() {
 		return players;
@@ -66,12 +74,14 @@ public class Team {
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
-		if (players == null) {
-			if (other.players != null)
-				return false;
-		} else if (!players.equals(other.players))
-			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "Team [id=" + id + ", name=" + name + ", gender=" + gender + "]";
+	}
+	
+	
 
 }
