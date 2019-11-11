@@ -17,12 +17,14 @@ public class Player {
 	@ManyToOne
 	private Team team;
 
-	public Player() {}
-	
-	public Player(String name, String country, Gender gender) {
+	public Player() {
+	}
+
+	public Player(String name, String country, Gender gender, Team team) {
 		this.name = name;
 		this.country = country;
 		this.gender = gender;
+		this.team = team;
 	}
 
 	@Override
@@ -71,5 +73,4 @@ public class Player {
 		return true;
 	}
 
-	
 }

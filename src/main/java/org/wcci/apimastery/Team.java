@@ -14,12 +14,13 @@ public class Team {
 	@GeneratedValue
 	private Long id;
 	private String name;
-	private Gender gender; 
+	private Gender gender;
 	@OneToMany(mappedBy = "team")
 	private List<Player> players;
 
-	public Team() {}
-	
+	public Team() {
+	}
+
 	public Team(String name, Gender gender) {
 		this.name = name;
 		this.gender = gender;
@@ -40,6 +41,7 @@ public class Team {
 		result = prime * result + ((gender == null) ? 0 : gender.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((players == null) ? 0 : players.hashCode());
 		return result;
 	}
 
@@ -64,8 +66,12 @@ public class Team {
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
+		if (players == null) {
+			if (other.players != null)
+				return false;
+		} else if (!players.equals(other.players))
+			return false;
 		return true;
 	}
 
-	
 }
