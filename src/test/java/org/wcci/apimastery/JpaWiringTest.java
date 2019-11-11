@@ -40,4 +40,21 @@ public class JpaWiringTest {
 		assertEquals(utTeam, retrievedTeam);
 		assertThat(retrievedTeam.getPlayers(), contains(utPlayer));
 	}
+	
+	@Test
+	public void tddAbstractRepoToService() throws Exception {
+		utTeam = teamRepo.save(utTeam);
+		utPlayer = playerRepo.save(utPlayer);
+		
+		entityManager.flush();
+		entityManager.clear();
+		
+		Team retrievedTeam = teamRepo.findById(utTeam.getId()).get();
+		Player retrievedPlayer = playerRepo.findById(utPlayer.getId()).get();
+		
+		assertEquals(utPlayer, retrievedPlayer);
+		assertEquals(utTeam, retrievedTeam);
+		assertThat(retrievedTeam.getPlayers(), contains(utPlayer));
+	}
+	
 }
