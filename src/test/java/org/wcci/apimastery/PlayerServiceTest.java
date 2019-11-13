@@ -36,6 +36,11 @@ public class PlayerServiceTest {
 	public void shouldAddPlayerToRepo() throws Exception {
 		Player storedPlayer = underTest.savePlayer(mockPlayer);
 		verify(playerRepo).save(mockPlayer);
+
+	}
+	
+	@Test
+	public void shouldDeletePlayerFromRepo() throws Exception {
 		underTest.deletePlayer(mockPlayer);
 		verify(playerRepo).delete(mockPlayer);
 	}
