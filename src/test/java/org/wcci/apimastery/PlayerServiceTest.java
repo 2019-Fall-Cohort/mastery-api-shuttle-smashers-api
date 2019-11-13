@@ -36,6 +36,13 @@ public class PlayerServiceTest {
 	public void shouldAddPlayerToRepo() throws Exception {
 		Player storedPlayer = underTest.savePlayer(mockPlayer);
 		verify(playerRepo).save(mockPlayer);
+
+	}
+	
+	@Test
+	public void shouldDeletePlayerFromRepo() throws Exception {
+		underTest.deletePlayer(mockPlayer);
+		verify(playerRepo).delete(mockPlayer);
 	}
 	
 	@Test
@@ -64,4 +71,23 @@ public class PlayerServiceTest {
 			assertThat(e.getMessage(), is(equalTo("Player not found.")));
 		}
 	}
+	
+//	@Test
+//	public void shouldAddOnePlayerToRepo() throws Exception {
+//		String name;
+//		String country;
+//		Gender gender;
+//		Team team;
+//		Player utPlayer = new Player(name, country, gender, team);
+//		
+//		
+//		Player storedPlayer = underTest.savePlayer(utPlayer);
+//		verify(playerRepo).save(mockPlayer);
+//		
+//		Player storedPlayer = underTest.savePlayer(mockPlayer);
+//		
+//		
+//	}
+	
+	
 }
