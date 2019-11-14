@@ -31,5 +31,9 @@ public class PlayerService {
 	public void deletePlayer(Player player) {
 		playerRepo.delete(player);
 	}
+
+	public void removePlayer(Player player) {
+		playerRepo.delete(player);
+	}
 	
 }
