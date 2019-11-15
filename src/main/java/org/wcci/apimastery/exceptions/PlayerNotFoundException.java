@@ -1,12 +1,12 @@
-package org.wcci.apimastery;
+package org.wcci.apimastery.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(code = HttpStatus.NOT_FOUND)
-public class TeamNotFoundException extends RuntimeException {
+public class PlayerNotFoundException extends RuntimeException {
 
-	public TeamNotFoundException(String message) {
+	public PlayerNotFoundException(String message) {
 		super(message);
 	}
 }

@@ -1,10 +1,13 @@
-package org.wcci.apimastery;
+package org.wcci.apimastery.services;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.wcci.apimastery.exceptions.TeamNotFoundException;
+import org.wcci.apimastery.models.Team;
+import org.wcci.apimastery.repositories.TeamRepository;
 
 @Service
 public class TeamService {
