@@ -1,10 +1,13 @@
-package org.wcci.apimastery;
+package org.wcci.apimastery.services;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.wcci.apimastery.exceptions.PlayerNotFoundException;
+import org.wcci.apimastery.models.Player;
+import org.wcci.apimastery.repositories.PlayerRepository;
 
 @Service
 public class PlayerService {

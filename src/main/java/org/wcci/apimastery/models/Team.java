@@ -1,4 +1,4 @@
-package org.wcci.apimastery;
+package org.wcci.apimastery.models;
 
 import java.util.List;
 
