@@ -16,7 +16,7 @@ import org.wcci.apimastery.services.TeamService;
 
 
 
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:8081")
 @RestController
 @RequestMapping("/api/teams")
 public class TeamController {

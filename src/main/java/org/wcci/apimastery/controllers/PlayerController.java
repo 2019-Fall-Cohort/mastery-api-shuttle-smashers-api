@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.wcci.apimastery.models.Player;
 import org.wcci.apimastery.services.PlayerService;
 
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:8081")
 @RestController 
 @RequestMapping("/api/players")
 public class PlayerController {
