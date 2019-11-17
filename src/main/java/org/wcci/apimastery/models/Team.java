@@ -14,6 +14,7 @@ public class Team {
 	@GeneratedValue
 	private Long id;
 	private String name;
+	private String flagUrl;
 	private Gender gender;
 	@OneToMany(mappedBy = "team")
 	private List<Player> players;
