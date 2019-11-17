@@ -30,4 +30,9 @@ public class TeamService {
 	public List<Team> fetchAllTeams() {
 		return (List<Team>) teamRepo.findAll();
 	}
+
+	public void removeTeam(Team team) {
+		teamRepo.delete(team);
+		
+	}
 }

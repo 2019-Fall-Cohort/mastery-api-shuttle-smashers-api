@@ -31,10 +31,6 @@ public class PlayerService {
 		return (List<Player>) playerRepo.findAll();
 	}
 	
-	public void deletePlayer(Player player) {
-		playerRepo.delete(player);
-	}
-
 	public void removePlayer(Player player) {
 		playerRepo.delete(player);
 	}

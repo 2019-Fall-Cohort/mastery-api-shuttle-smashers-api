@@ -45,7 +45,7 @@ public class PlayerServiceTest {
 	
 	@Test
 	public void shouldDeletePlayerFromRepo() throws Exception {
-		underTest.deletePlayer(mockPlayer);
+		underTest.removePlayer(mockPlayer);
 		verify(playerRepo).delete(mockPlayer);
 	}
 	
@@ -76,22 +76,7 @@ public class PlayerServiceTest {
 		}
 	}
 	
-//	@Test
-//	public void shouldAddOnePlayerToRepo() throws Exception {
-//		String name;
-//		String country;
-//		Gender gender;
-//		Team team;
-//		Player utPlayer = new Player(name, country, gender, team);
-//		
-//		
-//		Player storedPlayer = underTest.savePlayer(utPlayer);
-//		verify(playerRepo).save(mockPlayer);
-//		
-//		Player storedPlayer = underTest.savePlayer(mockPlayer);
-//		
-//		
-//	}
+
 	
 	
 }
