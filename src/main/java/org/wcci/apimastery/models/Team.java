@@ -24,6 +24,7 @@ public class Team {
 
 	public Team(String name, String flagUrl, Gender gender) {
 		this.name = name;
+		this.flagUrl = flagUrl;
 		this.gender = gender;
 	}
 
@@ -45,17 +46,22 @@ public class Team {
 			return "Mixed";
 		default:
 			return "default";
+		}
 	}
-}
 
 	public List<Player> getPlayers() {
 		return players;
+	}
+	
+	public String getFlagUrl() {
+		return flagUrl;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((flagUrl == null) ? 0 : flagUrl.hashCode());
 		result = prime * result + ((gender == null) ? 0 : gender.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
@@ -72,6 +78,11 @@ public class Team {
 		if (getClass() != obj.getClass())
 			return false;
 		Team other = (Team) obj;
+		if (flagUrl == null) {
+			if (other.flagUrl != null)
+				return false;
+		} else if (!flagUrl.equals(other.flagUrl))
+			return false;
 		if (gender != other.gender)
 			return false;
 		if (id == null) {
@@ -94,10 +105,8 @@ public class Team {
 
 	@Override
 	public String toString() {
-		return "Team [id=" + id + ", name=" + name + ", gender=" + gender + ", players=" + players + "]";
+		return "Team [id=" + id + ", name=" + name + ", flagUrl=" + flagUrl + ", gender=" + gender + ", players="
+				+ players + "]";
 	}
-
-
-
 
 }

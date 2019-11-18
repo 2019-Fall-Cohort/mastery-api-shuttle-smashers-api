@@ -27,7 +27,7 @@ public class JpaWiringTest {
 	@Autowired
 	private TestEntityManager entityManager;
 
-	private Team utTeam = new Team("Team1", Gender.MIXED);
+	private Team utTeam = new Team("Team1", "flagUrl", Gender.MIXED);
 	private Player utPlayer = new Player("Player1", "Country1", Gender.FEMALE, utTeam);
 
 	@Test
