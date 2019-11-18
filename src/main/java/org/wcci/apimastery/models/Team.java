@@ -22,7 +22,7 @@ public class Team {
 	public Team() {
 	}
 
-	public Team(String name, Gender gender) {
+	public Team(String name, String flagUrl, Gender gender) {
 		this.name = name;
 		this.gender = gender;
 	}
@@ -84,14 +84,20 @@ public class Team {
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
+		if (players == null) {
+			if (other.players != null)
+				return false;
+		} else if (!players.equals(other.players))
+			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Team [id=" + id + ", name=" + name + ", gender=" + gender + "]";
+		return "Team [id=" + id + ", name=" + name + ", gender=" + gender + ", players=" + players + "]";
 	}
-	
-	
+
+
+
 
 }

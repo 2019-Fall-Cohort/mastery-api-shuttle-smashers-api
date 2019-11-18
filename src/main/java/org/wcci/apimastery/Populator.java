@@ -22,17 +22,26 @@ public class Populator implements CommandLineRunner{
 		
 		// Winning 2016 Olympic Badminton Teams
 		
-		Team teamChinaMale = new Team("China-Male", Gender.MALE);	
-		Team teamMalaysiaMale = new Team("Malaysia-Male", Gender.MALE);
-		Team teamUkMale = new Team("UK-Male", Gender.MALE);	
+		Team teamChinaMale = new Team("China-Male Doubles", "https://cdn.britannica.com/90/7490-004-415899A0/Flag-China.jpg", 
+				Gender.MALE);	
+		Team teamMalaysiaMale = new Team("Malaysia-Male Doubles", "https://www.malaysia-traveller.com/images/xflag-of-malaya.jpg.pagespeed.ic.ea2dJAnceG.jpg",
+				Gender.MALE);
+		Team teamUkMale = new Team("UK-Male Doubles", "https://www.united-states-flag.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/g/r/greatbritain-nylon.jpg", 
+				Gender.MALE);	
 
-		Team teamJapanFemale = new Team("Japan-Female", Gender.FEMALE);
-		Team teamDenmarkFemale = new Team("Denmark-Female", Gender.FEMALE);		
-		Team teamSKoreaFemale = new Team("SKorea-Female", Gender.FEMALE);
+		Team teamJapanFemale = new Team("Japan-Female Doubles", "https://cdn.bannerbuzz.com/media/catalog/product/resize/560/j/a/japan-flag.jpg",
+				Gender.FEMALE);
+		Team teamDenmarkFemale = new Team("Denmark-Female Doubles", "https://images-na.ssl-images-amazon.com/images/I/51pW7YkWFCL._SX425_.jpg",
+				Gender.FEMALE);		
+		Team teamSKoreaFemale = new Team("SKorea-Female Doubles", "https://images.homedepot-static.com/productImages/798cfc69-a420-4360-9aab-86f446b6dc36/svn/anley-house-flags-a-flag-southkorea-64_1000.jpg", 
+				Gender.FEMALE);
 		
-		Team teamIndonesiaMixed = new Team("Indonesia-Mixed", Gender.MIXED);
-		Team teamMalaysiaMixed = new Team("Malaysia-Mixed", Gender.MIXED);
-		Team teamChinaMixed = new Team("China-Mixed", Gender.MIXED);
+		Team teamIndonesiaMixed = new Team("Indonesia-Mixed Doubles", "https://img5.goodfon.com/wallpaper/nbig/9/d9/indonesia-flag-of-indonesia-indonesia-flag-flag-country.jpg",
+				Gender.MIXED);
+		Team teamMalaysiaMixed = new Team("Malaysia-Mixed Doubles", "https://www.malaysia-traveller.com/images/xflag-of-malaya.jpg.pagespeed.ic.ea2dJAnceG.jpg",
+				Gender.MIXED);
+		Team teamChinaMixed = new Team("China-Mixed Doubles", "https://cdn.britannica.com/90/7490-004-415899A0/Flag-China.jpg",
+				Gender.MIXED);
 
 		teamService.saveTeam(teamChinaMale);
 		teamService.saveTeam(teamMalaysiaMale);
