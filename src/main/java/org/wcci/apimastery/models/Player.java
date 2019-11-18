@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Player {
 
@@ -14,6 +16,7 @@ public class Player {
 	private String name;
 	private String country;
 	private Gender gender;
+	@JsonIgnore
 	@ManyToOne
 	private Team team;
 
