@@ -35,9 +35,18 @@ public class Team {
 		return name;
 	}
 	
-	public Gender getGender() {
-		return gender;
+	public String getGender() {
+		switch (gender) {
+		case MALE: 
+			return "Male";
+		case FEMALE:
+			return "Female";
+		case MIXED:
+			return "Mixed";
+		default:
+			return "default";
 	}
+}
 
 	public List<Player> getPlayers() {
 		return players;
