@@ -20,9 +20,33 @@ public class Populator implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		
-		String chinaMale1;
+		// Winning 2016 Olympic Badminton Teams
 		
-		Team team1 = new Team(chinaMale1, MALE);
+		Team teamChinaMale = new Team("China-Male", Gender.MALE);	
+		Team teamMalaysiaMale = new Team("Malaysia-Male", Gender.MALE);
+		Team teamUkMale = new Team("UK-Male", Gender.MALE);	
+
+		Team teamJapanFemale = new Team("Japan-Female", Gender.FEMALE);
+		Team teamDenmarkFemale = new Team("Denmark-Female", Gender.FEMALE);		
+		Team teamSKoreaFemale = new Team("SKorea-Female", Gender.FEMALE);
+		
+		Team teamIndonesiaMixed = new Team("Indonesia-Mixed", Gender.MIXED);
+		Team teamMalaysiaMixed = new Team("Malaysia-Mixed", Gender.MIXED);
+		Team teamChinaMixed = new Team("China-Mixed", Gender.MIXED);
+
+		teamService.saveTeam(teamChinaMale);
+		teamService.saveTeam(teamMalaysiaMale);
+		teamService.saveTeam(teamUkMale);
+
+		teamService.saveTeam(teamJapanFemale);
+		teamService.saveTeam(teamDenmarkFemale);
+		teamService.saveTeam(teamSKoreaFemale);
+		
+		teamService.saveTeam(teamIndonesiaMixed);
+		teamService.saveTeam(teamMalaysiaMixed);
+		teamService.saveTeam(teamChinaMixed);
+		
+		
 		
 		
 	}
