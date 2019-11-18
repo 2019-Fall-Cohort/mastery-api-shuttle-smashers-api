@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.wcci.apimastery.models.Player;
 import org.wcci.apimastery.models.Team;
+import org.wcci.apimastery.services.PlayerService;
 import org.wcci.apimastery.services.TeamService;
 
 
@@ -23,6 +25,10 @@ public class TeamController {
 	
 	@Autowired
 	private TeamService teamservice;
+	
+	@Autowired
+	private PlayerService playerservice; 
+	
 
 	@GetMapping("")
 	public List<Team>getTeams() {
@@ -34,10 +40,16 @@ public class TeamController {
 		return teamservice.fetchTeam(id);
 	}
 	
+	@PostMapping("/add-player")
+	public Player addPlayer(@RequestBody Player player) {
+		return playerservice.savePlayer(player);
+	}
+	
 	@PostMapping("/add-team")
 	public Team addTeam(@RequestBody Team team) {
 		return teamservice.saveTeam(team);
 	}
+	
 	
 	@DeleteMapping("/{id}/remove-team")
 	public void removeTeam(@PathVariable Long id) {
