@@ -15,7 +15,7 @@ public class Player {
 	private Long id;
 	private String name;
 	private String country;
-	private Gender gender;
+	public Gender gender;
 	@JsonIgnore
 	@ManyToOne
 	private Team team;

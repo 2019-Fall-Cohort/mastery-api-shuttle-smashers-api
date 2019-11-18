@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -40,9 +41,12 @@ public class TeamController {
 		return teamservice.fetchTeam(id);
 	}
 	
-	@PostMapping("/add-player")
-	public Player addPlayer(@RequestBody Player player) {
-		return playerservice.savePlayer(player);
+	@PatchMapping("/{id}/add-player")
+	public Team addPlayer(@PathVariable Long id, @RequestBody Player player) {
+		Team team = teamservice.fetchTeam(id);
+		Player playerToAdd = new Player(player.getName(), player.getCountry(), player.gender, team);
+		playerservice.savePlayer(playerToAdd);
+		return teamservice.saveTeam(team);
 	}
 	
 	@PostMapping("/add-team")
